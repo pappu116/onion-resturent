@@ -1,0 +1,19 @@
+.product {
+  margin: 50px auto;
+}
+.btn-Check-out {
+  background-color: lightgray;
+  color: #fff;
+  border: none;
+  padding: 5px 20px;
+  margin-left: 50%;
+  border-radius: 5px;
+}
+.btn-Check-out1 {
+  background-color: #e05a54;
+  color: #fff;
+  border: none;
+  padding: 5px 20px;
+  margin-left: 50%;
+  border-radius: 5px;
+}

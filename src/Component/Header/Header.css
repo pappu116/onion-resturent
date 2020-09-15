@@ -1,0 +1,35 @@
+.Banner {
+  width: 105%;
+  height: 650px;
+  margin-left: -5%;
+  background-image: url(../../Image/bannerbackground.png);
+}
+.Banner h1 {
+  padding-top: 10%;
+}
+
+.Banner input {
+  width: 20%;
+  height: 35px;
+  padding: 5px;
+  border-radius: 50px;
+  border: none;
+  margin-top: 20px;
+}
+
+.btn-search {
+  background-color: #f91944;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 50px;
+  margin-left: -70px;
+  border: none;
+}
+.nav-bar {
+  margin-top: 50px;
+  display: flex;
+}
+.nav-bar li {
+  margin-left: 8px;
+  cursor: pointer;
+}

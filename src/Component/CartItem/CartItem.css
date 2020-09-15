@@ -1,0 +1,26 @@
+.item-area {
+  display: flex;
+  width: 300px;
+  margin-left: 5px;
+  border: 1px solid #ddd;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: lightgrey;
+}
+.item-area img {
+  height: 100px;
+  padding: 5px;
+  width: 50px;
+  margin-right: 5px;
+  border-radius: 5px;
+}
+.btn-cart {
+  padding: 5px 10px;
+  border: none;
+  background-color: #d3d3d3;
+  margin-left: 40px;
+}
+.btn-cart span {
+  margin-left: 2px;
+  margin-right: 2px;
+}
