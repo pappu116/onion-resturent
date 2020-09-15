@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
 import * as firebase from "firebase/app";
+import "./Loggedin.css";
 import "firebase/auth";
+import Logo from "../../Image/logo2.png";
 import firebaseConfig from "./firebase.config";
 import { UserContext } from "../../App";
 // Initialize Firebase
@@ -12,6 +14,7 @@ const Login = () => {
     name: "",
     email: "",
     photo: "",
+    password: "",
   });
   const provider = new firebase.auth.GoogleAuthProvider();
   const handelGoogleSignIn = () => {
@@ -52,9 +55,31 @@ const Login = () => {
         // An error happened.
       });
   };
+
+  //handelBlur callback
+  const handelBlur = (event) => {
+    let isFormValid = true;
+    if (event.target.name === "email") {
+      isFormValid = /\S+@\S+\.\S+/.test(event.target.value);
+      console.log(isFormValid);
+    }
+    if (event.target.name === "password") {
+      const isPasswordValid = event.target.value.length > 6;
+      const isPasswordHasNumber = /\d{1}/.test(event.target.value);
+      isFormValid = isPasswordValid && isPasswordHasNumber;
+    }
+    if (isFormValid) {
+    }
+  };
+  ///--------------------->*
+  //handelSubmit   *****++
+  //  *************************
+  const handelSubmit = (event) => {
+    console.log("mama1");
+  };
+
   return (
-    <div>
-      <h1>This is Logged in</h1>
+    <div className="loging-area">
       {user.isSignedIn ? (
         <button onClick={handelGoogleSignOut}>SignOut</button>
       ) : (
@@ -67,10 +92,39 @@ const Login = () => {
           <img src={user.photo} alt="" />
         </div>
       )}
-      <h1>LoogedIn</h1>
-      <input type="text" />
+      <div>
+        <img style={{ height: "100px" }} src={Logo} alt="" />
+      </div>
       <br />
-      <input type="password" name="" id="" />
+      <form onSubmit={handelSubmit}>
+        <input
+          type="text"
+          placeholder="Your Name"
+          required
+          onBlur={handelBlur}
+          name="name"
+        />
+        <br />
+        <input
+          type="email"
+          name="email"
+          id=""
+          placeholder="Your Email"
+          required
+          onBlur={handelBlur}
+        />
+        <br />
+        <input
+          type="password"
+          name="password"
+          id=""
+          placeholder="Your Password"
+          required
+          onBlur={handelBlur}
+        />
+        <br />
+        <input type="submit" value="Submit" />
+      </form>
     </div>
   );
 };
